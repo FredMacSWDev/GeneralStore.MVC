@@ -9,7 +9,7 @@ namespace GeneralStore.MVC.Controllers
 {
     public class ProductController : Controller
     {
-        //ADd the application DB Context (link to the database)
+        //Add the application DB Context (link to the database)
         private ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: Product
@@ -17,6 +17,26 @@ namespace GeneralStore.MVC.Controllers
         {
             // See below (modifying ApplicationDbContext class)
             return View(_db.Products.ToList());
+        }
+
+        // GET: Product
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Product
+        [HttpPost]
+        public ActionResult Create(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Products.Add(product);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(product);
         }
     }
 }
