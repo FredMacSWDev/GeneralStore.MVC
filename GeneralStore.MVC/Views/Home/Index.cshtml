@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Product";
+    ViewBag.Title = "Indiana";
 }
 
 <div class="jumbotron">
@@ -15,9 +15,9 @@
         <p>@Html.ActionLink("Check Products »", "Index", "Product", null, new { @class = "btn btn-primary btn-large" })</p>
     </div>
     <div class="col-md-4">
-        <h2>Get More Information</h2>
-        <p>Learn more about General Store here...</p>
-        <p><a class="btn btn-default" href="https://github.com/FredMacSWDev/GeneralStore.MVC/blob/master/README.md">Learn more &raquo;</a></p>
+        <h2>Customers</h2>
+        <p>Access our customer information here...</p>
+        <p>@Html.ActionLink("View Customers »", "Index", "Customer", null, new { @class = "btn btn-primary btn-large" })</p>
     </div>
     <div class="col-md-4">
         <h2>How are we doing?</h2>
