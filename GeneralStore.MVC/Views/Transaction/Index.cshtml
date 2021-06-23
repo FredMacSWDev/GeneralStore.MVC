@@ -1,0 +1,68 @@
+﻿@model IEnumerable<GeneralStore.MVC.Models.Transaction>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Transactions</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TransactionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchaseQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfTransaction)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <th>
+        @Html.DisplayFor(modelItem => item.TransactionID)
+    </th>
+    <th>
+        @Html.DisplayFor(modelItem => item.ProductID)
+    </th>
+    <th>
+        @Html.DisplayFor(modelItem => item.Product)
+    </th>
+    <th>
+        @Html.DisplayFor(modelItem => item.CustomerID)
+    </th>
+    <th>
+        @Html.DisplayFor(modelItem => item.Customer)
+    </th>
+    <th>
+        @Html.DisplayFor(modelItem => item.PurchaseQuantity)
+    </th>
+    <th>
+        @Html.DisplayFor(modelItem => item.DateOfTransaction)
+    </th>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.TransactionID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.TransactionID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.TransactionID })
+    </td>
+</tr>
+    }
+</table>
